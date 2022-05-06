@@ -5,8 +5,23 @@ interface AuthenticateUserArgs {
   password: string;
 }
 
+interface CreateNewUserArgs {
+  name: string;
+  email: string;
+  mobile_phone: string;
+  token: string;
+}
+
 interface AuthenticateUserResponse {
   token: string;
+}
+
+interface GetUsersListResponse {
+  result: User[];
+}
+
+interface CreateNewUserResponse {
+  result: User;
 }
 
 class ApiService {
@@ -17,7 +32,11 @@ class ApiService {
     Accept: 'application/json',
   };
 
-  async authenticateUser({ email, password }: AuthenticateUserArgs) {
+  private formHeader = {
+    'Content-Type': 'multipart/form-data',
+  };
+
+  authenticateUser({ email, password }: AuthenticateUserArgs) {
     return axios.post<AuthenticateUserResponse>(
       `${this.apiBaseURL}/token`,
       {
@@ -26,6 +45,34 @@ class ApiService {
       },
       {
         headers: this.authHeader,
+      },
+    );
+  }
+
+  getUsersList(token: string) {
+    const headers = {
+      ...this.authHeader,
+      Authorization: `Bearer ${token}`,
+    };
+    return axios.get<GetUsersListResponse>(`${this.apiBaseURL}/user/list`, {
+      headers,
+    });
+  }
+
+  createNewUser({ email, mobile_phone, name, token }: CreateNewUserArgs) {
+    const headers = {
+      ...this.formHeader,
+      Authorization: `Bearer ${token}`,
+    };
+    return axios.post<CreateNewUserResponse>(
+      `${this.apiBaseURL}/user/create`,
+      {
+        name,
+        email,
+        mobile_phone,
+      },
+      {
+        headers,
       },
     );
   }

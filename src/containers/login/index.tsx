@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { colors } from '@mui/material';
+import Alert from '@mui/material/Alert';
+
 import { AxiosError } from 'axios';
+
 import { useAuthProvider } from '../../contexts/authContext';
 import service from '../../services/api';
 
@@ -58,7 +61,7 @@ const Login: React.FC = () => {
     >
       <Typography variant="h4">Seja bem vindo!</Typography>
       {requestErrorMessage && (
-        <Typography color={colors.red[400]}>{requestErrorMessage}</Typography>
+        <Alert severity="error">{requestErrorMessage}</Alert>
       )}
       <TextField
         id="email"
