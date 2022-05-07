@@ -31,13 +31,16 @@ const UsersContainer: React.FC = () => {
         setIsLoading(false);
       });
   }, [token]);
+
   return (
     <ContentContainer>
       <Typography variant="h2" mb={2}>
         Usuários
       </Typography>
       <Link to="/usuarios/novo-usuario">
-        <Button variant="contained">criar novo usuário</Button>
+        <Button variant="contained" sx={{ marginBottom: 2 }}>
+          criar novo usuário
+        </Button>
       </Link>
       {isLoading && (
         <Typography variant="h4" my={2}>
@@ -50,13 +53,13 @@ const UsersContainer: React.FC = () => {
         </Typography>
       )}
       <Stack direction="row" flexWrap="wrap" gap={2}>
-        {users.length === 0 ? (
+        {users.length === 0 && isLoading === false ? (
           <Typography variant="h5" my={2}>
             Nenhum usuário encontrado!
           </Typography>
         ) : (
           users.map(userData => (
-            <Link to={`usuarios/${userData.id}`} key={userData.id}>
+            <Link to={`/usuarios/${userData.id}`} key={userData.id}>
               <UserComponent
                 name={userData.name}
                 email={userData.email}

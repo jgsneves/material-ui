@@ -12,6 +12,20 @@ interface CreateNewUserArgs {
   token: string;
 }
 
+interface UserUpdateArgs {
+  name?: string;
+  email?: string;
+  mobile_phone?: string;
+  user_id: number;
+  token: string;
+}
+
+interface SavePhotoArgs {
+  file: File;
+  user_id: number;
+  token: string;
+}
+
 interface AuthenticateUserResponse {
   token: string;
 }
@@ -22,6 +36,18 @@ interface GetUsersListResponse {
 
 interface CreateNewUserResponse {
   result: User;
+}
+
+interface GetUserResponse {
+  result: User;
+}
+
+interface UserUpdateResponse {
+  result: boolean;
+}
+
+interface SavePhotoResponse {
+  photo: string;
 }
 
 class ApiService {
@@ -74,6 +100,58 @@ class ApiService {
       {
         headers,
       },
+    );
+  }
+
+  userUpdate({ user_id, email, mobile_phone, name, token }: UserUpdateArgs) {
+    const headers = {
+      ...this.formHeader,
+      Authorization: `Bearer ${token}`,
+    };
+    return axios.post<UserUpdateResponse>(
+      `${this.apiBaseURL}/user/update`,
+      {
+        user_id,
+        name,
+        email,
+        mobile_phone,
+      },
+      {
+        headers,
+      },
+    );
+  }
+
+  getUser(id: string, token: string) {
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+    return axios.get<GetUserResponse>(`${this.apiBaseURL}/user/view/${id}`, {
+      headers,
+    });
+  }
+
+  savePhoto({ file, token, user_id }: SavePhotoArgs) {
+    const headers = {
+      ...this.formHeader,
+      Authorization: `Bearer ${token}`,
+    };
+    return axios.post<SavePhotoResponse>(
+      `${this.apiBaseURL}/photo/save`,
+      { file, user_id },
+      { headers },
+    );
+  }
+
+  updatePhoto({ file, token, user_id }: SavePhotoArgs) {
+    const headers = {
+      ...this.formHeader,
+      Authorization: `Bearer ${token}`,
+    };
+    return axios.post<SavePhotoResponse>(
+      `${this.apiBaseURL}/photo/update`,
+      { file, user_id },
+      { headers },
     );
   }
 }

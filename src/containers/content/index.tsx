@@ -9,7 +9,7 @@ const ContentContainer: React.FC<ContentContainerProps> = ({
   children,
 }: ContentContainerProps) => {
   return (
-    <Stack spacing={2} width="100%" ml={2}>
+    <Stack spacing={2} width="100%" ml={2} mt={2}>
       {children}
     </Stack>
   );

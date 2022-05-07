@@ -1,10 +1,8 @@
 import React from 'react';
 
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 interface UserProps {
@@ -26,7 +24,7 @@ const User: React.FC<UserProps> = ({
         {photoUrl ? (
           <Avatar alt={name} src={photoUrl} sx={{ width: 56, height: 56 }} />
         ) : (
-          <Avatar>{name[0]}</Avatar>
+          <Avatar sx={{ width: 56, height: 56 }}>{name[0]}</Avatar>
         )}
         <Typography gutterBottom variant="h5" component="div">
           {name}
@@ -38,9 +36,6 @@ const User: React.FC<UserProps> = ({
           {mobilePhone}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">editar</Button>
-      </CardActions>
     </Card>
   );
 };

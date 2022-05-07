@@ -11,19 +11,16 @@ const Menu: React.FC = () => {
   const { setToken } = useAuthProvider();
   return (
     <Stack spacing={3} height="100vh" p={3}>
-      <img
-        src="https://upload.wikimedia.org/wikipedia/pt/thumb/3/3d/Twitter_logo_2012.svg/1267px-Twitter_logo_2012.svg.png"
-        alt="logo"
-        width={150}
-      />
+      <Link to="/">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/pt/thumb/3/3d/Twitter_logo_2012.svg/1267px-Twitter_logo_2012.svg.png"
+          alt="logo"
+          width={150}
+        />
+      </Link>
       <Link to="/usuarios">
         <Button variant="text" fullWidth>
           usuários
-        </Button>
-      </Link>
-      <Link to="/fotos">
-        <Button variant="text" fullWidth>
-          fotos
         </Button>
       </Link>
       <Link to="/">

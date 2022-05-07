@@ -7,6 +7,8 @@ import UsersContainer from '../containers/users';
 import Menu from '../containers/menu';
 import CreateUserContainer from '../containers/createUser';
 import MainContainer from '../containers/main';
+import UserDetailContainer from '../containers/userDetail';
+import EditUser from '../containers/editUser';
 
 const PrivateRouter: React.FC = () => {
   return (
@@ -14,6 +16,8 @@ const PrivateRouter: React.FC = () => {
       <BrowserRouter>
         <Menu />
         <Routes>
+          <Route path="/usuarios/editar/:id" element={<EditUser />} />
+          <Route path="/usuarios/:id" element={<UserDetailContainer />} />
           <Route
             path="/usuarios/novo-usuario"
             element={<CreateUserContainer />}
