@@ -9,6 +9,7 @@ import { useAuthProvider } from '../../contexts/authContext';
 
 const Menu: React.FC = () => {
   const { setToken } = useAuthProvider();
+
   return (
     <Stack spacing={3} height="100vh" p={3}>
       <Link to="/">

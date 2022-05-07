@@ -83,13 +83,13 @@ const EditUser: React.FC = () => {
           user_id: Number(id),
         })
         .then(() => {
-          setShowSuccessAlert(true);
-          setIsLoading(false);
-          setTimeout(() => {
-            setShowSuccessAlert(false);
-          }, 3000);
           if (id) {
             service.getUser(id, token).then(res => setUser(res.data.result));
+            setShowSuccessAlert(true);
+            setIsLoading(false);
+            setTimeout(() => {
+              setShowSuccessAlert(false);
+            }, 3000);
           }
         })
         .catch((error: AxiosError) => {

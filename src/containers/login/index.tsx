@@ -61,7 +61,7 @@ const Login: React.FC = () => {
     >
       <Typography variant="h4">Seja bem vindo!</Typography>
       {requestErrorMessage && (
-        <Alert severity="error">{requestErrorMessage}</Alert>
+        <Alert severity="error">{`Houve algum erro. Mensagem: ${requestErrorMessage}`}</Alert>
       )}
       <TextField
         id="email"

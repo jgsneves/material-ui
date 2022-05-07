@@ -34,7 +34,8 @@ const CreateUserContainer: React.FC = () => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = event.target;
     setFormData({ ...formData, [id]: value });
-    setShowErrorAlert(false);
+    if (showErrorAlert === true) setShowErrorAlert(false);
+    if (showSuccessAlert === true) setShowSuccessAlert(false);
   };
 
   const onSubmit = () => {
@@ -71,6 +72,7 @@ const CreateUserContainer: React.FC = () => {
       <Typography variant="h2" mb={2}>
         Criar um novo usuário
       </Typography>
+
       {showSuccessAlert && (
         <Alert severity="success">
           Usuário criado com sucesso!{' '}
@@ -79,9 +81,11 @@ const CreateUserContainer: React.FC = () => {
           </Button>
         </Alert>
       )}
+
       {showErrorAlert && (
         <Alert severity="error">Houve algum erro, tente novamente.</Alert>
       )}
+
       <Stack width={400} spacing={2}>
         <TextField
           id="name"
@@ -112,6 +116,7 @@ const CreateUserContainer: React.FC = () => {
           onKeyDown={handleEnterKeyPressDown}
           error={showErrorAlert}
         />
+
         <Stack direction="row" width="100%" justifyContent="space-between">
           <Button
             variant="contained"
