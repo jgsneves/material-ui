@@ -5,11 +5,11 @@ interface IAuthContext {
   setToken: React.Dispatch<React.SetStateAction<string>>;
 }
 
-interface AuthContextProviderProps {
+export interface AuthContextProviderProps {
   children: React.ReactNode;
 }
 
-const AuthContext = createContext<IAuthContext>({} as IAuthContext);
+export const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 
 export const AuthProvider: React.FC<AuthContextProviderProps> = ({
   children,

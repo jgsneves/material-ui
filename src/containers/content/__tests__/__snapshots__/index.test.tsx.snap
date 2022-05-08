@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User component test suite should render proper snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="css-syv4d2-MuiStack-root"
+  >
+    <h3>
+      olá!
+    </h3>
+  </div>
+</DocumentFragment>
+`;

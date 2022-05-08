@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Users test suite Authorized user should see users list 1`] = `
+<DocumentFragment>
+  <div
+    class="css-syv4d2-MuiStack-root"
+  >
+    <h2
+      class="MuiTypography-root MuiTypography-h2 css-vqgaav-MuiTypography-root"
+    >
+      Usuários
+    </h2>
+    <a
+      href="/usuarios/novo-usuario"
+    >
+      <button
+        class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-1cr332u-MuiButtonBase-root-MuiButton-root"
+        tabindex="0"
+        type="button"
+      >
+        criar novo usuário
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+    </a>
+    <div
+      class="css-kg66kc-MuiStack-root"
+    >
+      <a
+        href="/usuarios/1"
+      >
+        <div
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1syf4pq-MuiPaper-root-MuiCard-root"
+        >
+          <div
+            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+          >
+            <div
+              class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-8h65ya-MuiAvatar-root"
+            >
+              J
+            </div>
+            <div
+              class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-h93ljk-MuiTypography-root"
+            >
+              Jose da Silva
+            </div>
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+            >
+              teste@gmail.com
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+            >
+              7199447543
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Users test suite Not authorized user should not see users list 1`] = `
+<DocumentFragment>
+  <div
+    class="css-syv4d2-MuiStack-root"
+  >
+    <h2
+      class="MuiTypography-root MuiTypography-h2 css-vqgaav-MuiTypography-root"
+    >
+      Usuários
+    </h2>
+    <a
+      href="/usuarios/novo-usuario"
+    >
+      <button
+        class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-1cr332u-MuiButtonBase-root-MuiButton-root"
+        tabindex="0"
+        type="button"
+      >
+        criar novo usuário
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+    </a>
+    <h4
+      class="MuiTypography-root MuiTypography-h4 css-ue75iy-MuiTypography-root"
+    >
+      Request failed with status code 403
+    </h4>
+    <div
+      class="css-kg66kc-MuiStack-root"
+    >
+      <h5
+        class="MuiTypography-root MuiTypography-h5 css-1sj8qfn-MuiTypography-root"
+      >
+        Nenhum usuário encontrado!
+      </h5>
+    </div>
+  </div>
+</DocumentFragment>
+`;
