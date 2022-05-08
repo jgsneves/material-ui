@@ -1,4 +1,4 @@
-![MaterialUI](https://images.prismic.io/boringowl/e913c1fa-b0b1-4e92-bb7b-f80a241b0527_Material+UI.png)
+<img src="https://images.prismic.io/boringowl/e913c1fa-b0b1-4e92-bb7b-f80a241b0527_Material+UI.png" alt="MaterialUI" width="600"/>
 
 # Aplicação ReactJS com MaterialUI
 A intenção deste repositório é demonstrar meus conhecimentos utilizando ReactJS, Typescript e MaterialUI.
